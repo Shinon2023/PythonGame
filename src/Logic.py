@@ -1,5 +1,5 @@
 import pygame, random
-from Data import Data
+from src.Data import Data
 
 data = Data()
 
@@ -137,5 +137,4 @@ class Ingame_Logic():
             if data.player_side == 0:
                 if data.xy_player[0] <= data.x_enemy_spaw[i] and data.x_enemy_spaw[i] <= data.xy_player[0] + 150:
                     data.x_enemy_spaw.pop(i)
-                    data.x_enemy_spaw.insert(i, x)
-            
+                    data.x_enemy_spaw.insert(i, x)    

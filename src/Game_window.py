@@ -1,7 +1,7 @@
 import threading
-from Animetion import Animetion
-from Operator import Operator
-from Logic import Ingame_Logic
+from src.Animetion import Animetion
+from src.Operator import Operator
+from src.Logic import Ingame_Logic
 
 logic = Ingame_Logic()
 animetion = Animetion()

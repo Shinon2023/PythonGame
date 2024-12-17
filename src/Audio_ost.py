@@ -1,9 +1,10 @@
 import pygame
+from lib.path import resolve_path
 
 class Audio():
     def __init__(self):
-        self.main_page_ost = pygame.mixer.Sound('Audio\The First Town.wav')
-        self.ingame_page_ost = pygame.mixer.Sound('Audio\Swordland.wav')
+        self.main_page_ost = pygame.mixer.Sound(resolve_path('@/public/Audio/The First Town.wav'))
+        self.ingame_page_ost = pygame.mixer.Sound(resolve_path('@/public/Audio/Swordland.wav'))
 
     def play_main(self, control_windows, event_sound):
         if event_sound == 0:

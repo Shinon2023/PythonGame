@@ -1,9 +1,9 @@
 import pygame, threading
-from Logic import Ingame_Logic
-from Animetion import Animetion
-from Data import Data
-from Main_Module import Module
-from Audio_ost import Audio
+from src.Logic import Ingame_Logic
+from src.Animetion import Animetion
+from src.Data import Data
+from src.Main_Module import Module
+from src.Audio_ost import Audio
 
 module = Module()
 data = Data()

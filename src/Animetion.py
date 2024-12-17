@@ -1,8 +1,9 @@
 import pygame
 
-from Main_Module import Module
-from Data import Data
-from Logic import Ingame_Logic
+from src.Main_Module import Module
+from src.Data import Data
+from src.Logic import Ingame_Logic
+from lib.path import resolve_path
 
 logic = Ingame_Logic()
 module = Module()
@@ -11,14 +12,14 @@ data = Data()
 class Animetion():
     def __init__(self):
         #load image
-        self.background = pygame.image.load("image\Background\Background.jpg")
-        self.background_start_game = pygame.image.load("image\Background\Background_start_game.jpg")
-        self.animetion = pygame.image.load("image\Animetion Sprite\Runing animetion.png")
-        self.button = pygame.image.load("Image\Button 1\Button.png")
-        self.attack_animetion = pygame.image.load("Image\Animetion Sprite\Attack Animetion.png")
-        self.player = pygame.image.load("Image\Animetion Sprite\Player.png")
-        self.slime_enemy = pygame.image.load("Image\Animetion Sprite\slime enemy.png")
-        self.text_box = pygame.image.load("image\Background\Text_box.png")
+        self.background = pygame.image.load(resolve_path('@/public/image/Background/Background.jpg'))
+        self.background_start_game = pygame.image.load(resolve_path('@/public/image/Background/Background_start_game.jpg'))
+        self.animetion = pygame.image.load(resolve_path('@/public/image/Animetion Sprite/Runing animetion.png'))
+        self.button = pygame.image.load(resolve_path('@/public/image/Button 1/Button.png'))
+        self.attack_animetion = pygame.image.load(resolve_path('@/public/image/Animetion Sprite/Attack Animetion.png'))
+        self.player = pygame.image.load(resolve_path('@/public/image/Animetion Sprite/Player.png'))
+        self.slime_enemy = pygame.image.load(resolve_path('@/public/image/Animetion Sprite/slime enemy.png'))
+        self.text_box = pygame.image.load(resolve_path('@/public/image/Background/Text_box.png'))
         #set scale image
         self.button = pygame.transform.scale(self.button, (960, 80))
         self.animetion = pygame.transform.scale(self.animetion, (2400, 960))
@@ -94,50 +95,14 @@ class Animetion():
         elif animetion == 1:
             module.window.blit(self.attack_animetion, (self.attack_player_surface), (x_sprite * 320, y_sprite * 120, 320, 120))
         if len(logic.x_enemy_spaw) > 0:
-            self.slime_enemy_surface.centerx = logic.x_enemy_spaw[0]
-            module.window.blit(self.slime_enemy, self.slime_enemy_surface, (logic.x_sprite_enemy[0] * 90, logic.y_sprite_enemy[0] * 90, 90, 90))
-            if len(logic.x_enemy_spaw) > 1:
-                self.slime_enemy_surface.centerx = logic.x_enemy_spaw[1]
-                module.window.blit(self.slime_enemy, self.slime_enemy_surface, (logic.x_sprite_enemy[1] * 90, logic.y_sprite_enemy[1] * 90, 90, 90))
-                if len(logic.x_enemy_spaw) > 2:
-                    self.slime_enemy_surface.centerx = logic.x_enemy_spaw[2]
-                    module.window.blit(self.slime_enemy, self.slime_enemy_surface, (logic.x_sprite_enemy[2] * 90, logic.y_sprite_enemy[2] * 90, 90, 90))
-                    if len(logic.x_enemy_spaw) > 3:
-                        self.slime_enemy_surface.centerx = logic.x_enemy_spaw[3]
-                        module.window.blit(self.slime_enemy, self.slime_enemy_surface, (logic.x_sprite_enemy[3] * 90, logic.y_sprite_enemy[3] * 90, 90, 90))
-                        if len(logic.x_enemy_spaw) > 4:
-                            self.slime_enemy_surface.centerx = logic.x_enemy_spaw[4]
-                            module.window.blit(self.slime_enemy, self.slime_enemy_surface, (logic.x_sprite_enemy[4] * 90, logic.y_sprite_enemy[4] * 90, 90, 90))
-                            if len(logic.x_enemy_spaw) > 5:
-                                self.slime_enemy_surface.centerx = logic.x_enemy_spaw[5]
-                                module.window.blit(self.slime_enemy, self.slime_enemy_surface, (logic.x_sprite_enemy[5] * 90, logic.y_sprite_enemy[5] * 90, 90, 90))
-                                if len(logic.x_enemy_spaw) > 6:
-                                    self.slime_enemy_surface.centerx = logic.x_enemy_spaw[6]
-                                    module.window.blit(self.slime_enemy, self.slime_enemy_surface, (logic.x_sprite_enemy[6] * 90, logic.y_sprite_enemy[6] * 90, 90, 90))
-                                    if len(logic.x_enemy_spaw) > 7:
-                                        self.slime_enemy_surface.centerx = logic.x_enemy_spaw[7]
-                                        module.window.blit(self.slime_enemy, self.slime_enemy_surface, (logic.x_sprite_enemy[7] * 90, logic.y_sprite_enemy[7] * 90, 90, 90))
-                                        if len(logic.x_enemy_spaw) > 8:
-                                            self.slime_enemy_surface.centerx = logic.x_enemy_spaw[8]
-                                            module.window.blit(self.slime_enemy, self.slime_enemy_surface, (logic.x_sprite_enemy[8] * 90, logic.y_sprite_enemy[8] * 90, 90, 90))
-                                            if len(logic.x_enemy_spaw) > 9:
-                                                self.slime_enemy_surface.centerx = logic.x_enemy_spaw[9]
-                                                module.window.blit(self.slime_enemy, self.slime_enemy_surface, (logic.x_sprite_enemy[9] * 90, logic.y_sprite_enemy[9] * 90, 90, 90))
-                                                if len(logic.x_enemy_spaw) > 10:
-                                                    self.slime_enemy_surface.centerx = logic.x_enemy_spaw[10]
-                                                    module.window.blit(self.slime_enemy, self.slime_enemy_surface, (logic.x_sprite_enemy[10] * 90, logic.y_sprite_enemy[10] * 90, 90, 90))
-                                                    if len(logic.x_enemy_spaw) > 11:
-                                                        self.slime_enemy_surface.centerx = logic.x_enemy_spaw[11]
-                                                        module.window.blit(self.slime_enemy, self.slime_enemy_surface, (logic.x_sprite_enemy[11] * 90, logic.y_sprite_enemy[11] * 90, 90, 90))
-                                                        if len(logic.x_enemy_spaw) > 12:
-                                                            self.slime_enemy_surface.centerx = logic.x_enemy_spaw[12]
-                                                            module.window.blit(self.slime_enemy, self.slime_enemy_surface, (logic.x_sprite_enemy[12] * 90, logic.y_sprite_enemy[12] * 90, 90, 90))
-                                                            if len(logic.x_enemy_spaw) > 13:
-                                                                self.slime_enemy_surface.centerx = logic.x_enemy_spaw[13]
-                                                                module.window.blit(self.slime_enemy, self.slime_enemy_surface, (logic.x_sprite_enemy[13] * 90, logic.y_sprite_enemy[13] * 90, 90, 90))
-                                                                if len(logic.x_enemy_spaw) > 14:
-                                                                    self.slime_enemy_surface.centerx = logic.x_enemy_spaw[14]
-                                                                    module.window.blit(self.slime_enemy, self.slime_enemy_surface, (logic.x_sprite_enemy[14] * 90, logic.y_sprite_enemy[14] * 90, 90, 90))
+            for i in range(len(logic.x_enemy_spaw)):
+                self.slime_enemy_surface.centerx = logic.x_enemy_spaw[i]
+                module.window.blit(
+                    self.slime_enemy,
+                    self.slime_enemy_surface,
+                    (logic.x_sprite_enemy[i] * 90, logic.y_sprite_enemy[i] * 90, 90, 90)
+                )
+
                             
     def Background_start_game(self, button1_sprite,button2_sprite, button3_sprite):
         module.window.blit(self.background_start_game, (0, 0))
